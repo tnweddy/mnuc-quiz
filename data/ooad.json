@@ -1,0 +1,413 @@
+{
+ "title": "OOAD (SCO 208)",
+ "questions": [
+  {
+   "q": "Which SOLID principle says a class should have only one reason to change?",
+   "options": [
+    "Single Responsibility",
+    "Open/Closed",
+    "Liskov Substitution",
+    "Dependency Inversion"
+   ],
+   "answer": 0,
+   "explain": "S=Single responsibility, O=Open/closed, L=Liskov substitution, I=Interface segregation, D=Dependency inversion."
+  },
+  {
+   "q": "Which relationship means the part cannot exist without the whole?",
+   "options": [
+    "Composition",
+    "Aggregation",
+    "Association",
+    "Dependency"
+   ],
+   "answer": 0,
+   "explain": "Composition is strong ownership (house–room). Aggregation is weak (team–player)."
+  },
+  {
+   "q": "Multiplicity in UML specifies…",
+   "options": [
+    "How many instances of one class relate to another",
+    "Class colour",
+    "Method speed",
+    "Inheritance depth"
+   ],
+   "answer": 0,
+   "explain": "Types: one-to-one, one-to-many, many-to-many."
+  },
+  {
+   "q": "In the ABC restaurant, which are the actors?",
+   "options": [
+    "Chef, waiter, customer",
+    "Menu, bill, food",
+    "Kitchen, table, door",
+    "Only the chef"
+   ],
+   "answer": 0,
+   "explain": "A use case diagram shows actors and what they do with the system."
+  },
+  {
+   "q": "Child's bank account state diagram: when can the account close?",
+   "options": [
+    "Only when the balance is zero",
+    "Anytime",
+    "Only when overdrawn",
+    "Only on deposit"
+   ],
+   "answer": 0,
+   "explain": "Withdraw has guard [balance ≥ amount]; close has guard [balance = 0]."
+  },
+  {
+   "q": "Functional modelling vs dynamic modelling?",
+   "options": [
+    "Functional shows data transformation (DFDs); dynamic shows behaviour over time",
+    "They're identical",
+    "Dynamic shows data only",
+    "Functional shows states"
+   ],
+   "answer": 0,
+   "explain": "Dynamic uses state and sequence diagrams."
+  },
+  {
+   "q": "A UML sequence diagram is used to show…",
+   "options": [
+    "Object interactions in time order",
+    "Class structure",
+    "Deployment",
+    "Database tables"
+   ],
+   "answer": 0,
+   "explain": "Class=structure, Activity=workflow, Sequence=message order."
+  },
+  {
+   "q": "Object-oriented design models a system as?",
+   "options": [
+    "Interacting objects",
+    "Sequential procedures",
+    "Flowcharts only",
+    "Tables"
+   ],
+   "answer": 0,
+   "explain": "Objects with data and behaviour."
+  },
+  {
+   "q": "An object is?",
+   "options": [
+    "An instance of a class",
+    "A blueprint",
+    "A package",
+    "A diagram"
+   ],
+   "answer": 0,
+   "explain": "Class is the blueprint."
+  },
+  {
+   "q": "Encapsulation means?",
+   "options": [
+    "Bundling data and methods and hiding internals",
+    "Inheriting code",
+    "Many forms",
+    "Drawing diagrams"
+   ],
+   "answer": 0,
+   "explain": "Private data, public methods."
+  },
+  {
+   "q": "Polymorphism means?",
+   "options": [
+    "Same operation behaving differently by object",
+    "Hiding data",
+    "Copying classes",
+    "One object only"
+   ],
+   "answer": 0,
+   "explain": "Overriding is an example."
+  },
+  {
+   "q": "Abstraction is?",
+   "options": [
+    "Showing essential features, hiding detail",
+    "Copying objects",
+    "Deleting classes",
+    "Using tables"
+   ],
+   "answer": 0,
+   "explain": "Focus on what matters."
+  },
+  {
+   "q": "An actor in a use case diagram is?",
+   "options": [
+    "An external entity interacting with the system",
+    "A class",
+    "A database",
+    "A method"
+   ],
+   "answer": 0,
+   "explain": "Can be a person or system."
+  },
+  {
+   "q": "The «include» relationship means?",
+   "options": [
+    "Mandatory reused behaviour",
+    "Optional behaviour",
+    "Inheritance",
+    "Deletion"
+   ],
+   "answer": 0,
+   "explain": "Base always calls included case."
+  },
+  {
+   "q": "The «extend» relationship means?",
+   "options": [
+    "Optional or conditional extra behaviour",
+    "Mandatory behaviour",
+    "Composition",
+    "Association"
+   ],
+   "answer": 0,
+   "explain": "Extension adds behaviour."
+  },
+  {
+   "q": "Which symbol shows aggregation?",
+   "options": [
+    "Hollow diamond",
+    "Filled diamond",
+    "Hollow triangle",
+    "Dashed arrow"
+   ],
+   "answer": 0,
+   "explain": "Weak whole-part."
+  },
+  {
+   "q": "Which symbol shows composition?",
+   "options": [
+    "Filled diamond",
+    "Hollow diamond",
+    "Plain line",
+    "Hollow triangle"
+   ],
+   "answer": 0,
+   "explain": "Strong whole-part."
+  },
+  {
+   "q": "Generalization is drawn as?",
+   "options": [
+    "Line with hollow triangle",
+    "Dashed arrow",
+    "Filled diamond",
+    "Plain line"
+   ],
+   "answer": 0,
+   "explain": "Points to the superclass."
+  },
+  {
+   "q": "Dependency is drawn as?",
+   "options": [
+    "Dashed arrow",
+    "Solid line",
+    "Filled diamond",
+    "Hollow triangle"
+   ],
+   "answer": 0,
+   "explain": "One class uses another."
+  },
+  {
+   "q": "Multiplicity 0..* means?",
+   "options": [
+    "Zero or more",
+    "Exactly one",
+    "One or more",
+    "Zero or one"
+   ],
+   "answer": 0,
+   "explain": "No upper limit."
+  },
+  {
+   "q": "A UML class box has which compartments?",
+   "options": [
+    "Name, attributes, operations",
+    "Name only",
+    "Actors, goals",
+    "Inputs, outputs"
+   ],
+   "answer": 0,
+   "explain": "Three sections."
+  },
+  {
+   "q": "In UML, + before a member means?",
+   "options": [
+    "Public",
+    "Private",
+    "Protected",
+    "Static"
+   ],
+   "answer": 0,
+   "explain": "− is private."
+  },
+  {
+   "q": "A lifeline in a sequence diagram is?",
+   "options": [
+    "A vertical dashed line for an object's existence",
+    "A horizontal arrow",
+    "A decision",
+    "A class"
+   ],
+   "answer": 0,
+   "explain": "Messages go between lifelines."
+  },
+  {
+   "q": "A diamond in an activity diagram is?",
+   "options": [
+    "A decision/merge node",
+    "Start",
+    "End",
+    "Actor"
+   ],
+   "answer": 0,
+   "explain": "Branches the flow."
+  },
+  {
+   "q": "The initial state in a state diagram is?",
+   "options": [
+    "A filled black circle",
+    "A hollow circle",
+    "A diamond",
+    "A bar"
+   ],
+   "answer": 0,
+   "explain": "Start marker."
+  },
+  {
+   "q": "Singleton pattern ensures?",
+   "options": [
+    "Only one instance of a class",
+    "Many instances",
+    "No instances",
+    "Copy of objects"
+   ],
+   "answer": 0,
+   "explain": "Global access point."
+  },
+  {
+   "q": "Open/Closed principle says?",
+   "options": [
+    "Open for extension, closed for modification",
+    "Open for modification",
+    "Closed for extension",
+    "Always inherit"
+   ],
+   "answer": 0,
+   "explain": "Add features without editing code."
+  },
+  {
+   "q": "Liskov Substitution principle says?",
+   "options": [
+    "Subtypes must be usable in place of their base type",
+    "Classes must be final",
+    "One class per file",
+    "Avoid interfaces"
+   ],
+   "answer": 0,
+   "explain": "Child should not break parent behaviour."
+  },
+  {
+   "q": "Dependency Inversion principle says?",
+   "options": [
+    "Depend on abstractions, not concrete classes",
+    "Depend on concrete classes",
+    "Avoid abstractions",
+    "Invert inheritance"
+   ],
+   "answer": 0,
+   "explain": "High-level modules shouldn't depend on low-level ones."
+  },
+  {
+   "q": "Interface Segregation principle says?",
+   "options": [
+    "Prefer many small specific interfaces",
+    "One large interface",
+    "No interfaces",
+    "Interfaces must be classes"
+   ],
+   "answer": 0,
+   "explain": "Don't force unused methods."
+  }
+ ],
+ "flashcards": [
+  {
+   "q": "1a Define: OO design, class, design pattern, use case, inheritance (5)",
+   "a": "OO design: planning a system as interacting objects. Class: blueprint of attributes and methods. Design pattern: reusable solution to a common design problem. Use case: a goal-oriented interaction between actor and system. Inheritance: a subclass acquires attributes/methods of a superclass."
+  },
+  {
+   "q": "1b Four relationships between objects with diagrams (8)",
+   "a": "Association (plain line); aggregation (hollow diamond, weak whole-part); composition (filled diamond, strong whole-part); generalization/inheritance (hollow triangle arrow, is-a). Dependency (dashed arrow) also possible."
+  },
+  {
+   "q": "1c Object-oriented life cycle model (7)",
+   "a": "Iterative, incremental: analysis (requirements, objects) → design (classes, relationships) → implementation → testing → maintenance, with reuse and feedback between phases (fountain/spiral style)."
+  },
+  {
+   "q": "1d(i) Use case diagram for ABC restaurant (5)",
+   "a": "Actors: Chef, Waiter, Customer. Chef: order ingredients, prepare food, wash up. Waiter: take order, prepare bill, take payment. Customer: browse menu, order food, consume, request bill, pay. Draw actors outside a system box with ovals."
+  },
+  {
+   "q": "1d(ii) Use case descriptions and scenarios (5)",
+   "a": "Use case Order Food. Actor: Customer. Pre: seated. Main flow: browse menu → place order → waiter records → chef prepares → food served. Alternate: item unavailable. Post: order delivered. Repeat for Prepare Bill and Pay."
+  },
+  {
+   "q": "2a Importance of OOAD vs other methodologies (5)",
+   "a": "Models real-world objects; encapsulation, reuse and inheritance; easier maintenance and change; better fit for large systems than structured methods that separate data and process."
+  },
+  {
+   "q": "2b Role of UML in OOAD (5)",
+   "a": "Standard notation to visualise, specify, construct and document models; shared language between stakeholders; covers structure and behaviour diagrams."
+  },
+  {
+   "q": "2c Inheritance and generalization in an E-learning class diagram (10)",
+   "a": "Generalize Student, Instructor, Admin into superclass User (name, email, login()). Generalization pulls common features up; inheritance lets subclasses reuse them and add their own (Student: enroll(); Instructor: createCourse()). Draw hollow triangle arrows to User; link Course, Lesson, Quiz."
+  },
+  {
+   "q": "3a Usability, interoperability, correctness, maintainability, reusability (5)",
+   "a": "Usability: ease of use. Interoperability: works with other systems. Correctness: does what the spec says. Maintainability: ease of fixing/changing. Reusability: components usable in other systems."
+  },
+  {
+   "q": "3b Library system: identification, classification, behaviour modelling (9)",
+   "a": "Identify objects (Book, Member, Librarian, Loan, Fine). Classify into classes with attributes and methods. Model behaviour with state diagrams (Book: available, borrowed, reserved) and sequence diagrams (borrow, return)."
+  },
+  {
+   "q": "3c Purpose of sequence, class, activity diagrams (6)",
+   "a": "Sequence: message order between objects over time. Class: static structure and relationships. Activity: workflow of actions, decisions and parallel flows."
+  },
+  {
+   "q": "4a Two motivations for moving from structured to OO (4)",
+   "a": "Growing complexity and maintenance cost of large systems; need for reuse; structured methods separate data from processes; requirements change often."
+  },
+  {
+   "q": "4b Functional modelling process (5)",
+   "a": "Identify inputs/outputs and external entities; draw context diagram; decompose into leveled data flow diagrams; define processes and data stores; check balancing."
+  },
+  {
+   "q": "4c Functional vs dynamic modelling (4)",
+   "a": "Functional: how data is transformed (DFDs, what the system does). Dynamic: how objects behave over time (state, sequence diagrams)."
+  },
+  {
+   "q": "4d State diagram of child's bank account (7)",
+   "a": "Start → Empty. Empty → InCredit on deposit. InCredit → InCredit on deposit, or withdraw [balance>amount]. InCredit → Empty on withdraw [balance=amount]. Empty → Closed on close [balance=0] → end. No overdrawn state."
+  },
+  {
+   "q": "5a Multiplicity in UML (2)",
+   "a": "Number of instances of one class that can relate to an instance of another (e.g. 1, 0..*, 1..*)."
+  },
+  {
+   "q": "5b Three main multiplicities with diagrams (6)",
+   "a": "One-to-one (Person 1—1 Passport); one-to-many (Customer 1—0..* Order); many-to-many (Student *—* Course)."
+  },
+  {
+   "q": "5c How OOAD supports reuse (7)",
+   "a": "Inheritance, encapsulated classes, polymorphism, design patterns, libraries/frameworks and component interfaces let you reuse tested code and models."
+  },
+  {
+   "q": "5d Role of SOLID principles (5)",
+   "a": "S single responsibility; O open for extension, closed for modification; L Liskov substitution; I interface segregation; D dependency inversion. Give flexible, maintainable, testable designs."
+  }
+ ]
+}

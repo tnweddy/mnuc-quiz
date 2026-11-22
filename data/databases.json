@@ -1,0 +1,465 @@
+{
+ "title": "Database Systems (SCO 206)",
+ "questions": [
+  {
+   "q": "A candidate key is…",
+   "options": [
+    "A minimal set of attributes that uniquely identifies each tuple",
+    "Any column with text",
+    "A foreign key",
+    "A set with duplicates"
+   ],
+   "answer": 0,
+   "explain": "Unique and minimal (no attribute can be removed). One candidate key becomes the primary key."
+  },
+  {
+   "q": "ANSI/SPARC architecture has which three levels?",
+   "options": [
+    "External, conceptual, internal",
+    "Physical, network, user",
+    "Client, server, cloud",
+    "Logical, binary, hardware"
+   ],
+   "answer": 0,
+   "explain": "It gives data independence: changing one level doesn't affect the one above."
+  },
+  {
+   "q": "In SQL, WHERE is used to…",
+   "options": [
+    "Filter rows by a condition",
+    "Choose columns",
+    "Name the table",
+    "Sort results"
+   ],
+   "answer": 0,
+   "explain": "SELECT picks columns, FROM names tables, WHERE filters rows."
+  },
+  {
+   "q": "Relationship between CUSTOMER and ORDERS?",
+   "options": [
+    "One-to-many",
+    "One-to-one",
+    "Many-to-many",
+    "None"
+   ],
+   "answer": 0,
+   "explain": "One customer can place many orders. CustomerID in ORDERS is the foreign key."
+  },
+  {
+   "q": "Which customer has the highest total spend?",
+   "options": [
+    "John Mwangi (C01) with 27,000",
+    "Mary Njeri (C02) with 20,000",
+    "Ali Hassan (C03) with 8,500",
+    "All equal"
+   ],
+   "answer": 0,
+   "explain": "C01: 15,000+12,000=27,000. SQL: SELECT c.name, SUM(o.total) FROM customer c JOIN orders o USING(customer_id) GROUP BY c.name ORDER BY SUM(o.total) DESC LIMIT 1;"
+  },
+  {
+   "q": "Why link by CustomerID instead of customer names?",
+   "options": [
+    "IDs are unique; names can repeat or change",
+    "IDs are shorter only",
+    "Names are illegal",
+    "It's slower"
+   ],
+   "answer": 0,
+   "explain": "Prevents ambiguity and update anomalies; keeps integrity."
+  },
+  {
+   "q": "SALES_RECORD repeats John Mwangi's name and phone on two rows. This is…",
+   "options": [
+    "Data redundancy causing update anomalies",
+    "Normalization",
+    "A primary key",
+    "Encryption"
+   ],
+   "answer": 0,
+   "explain": "Fix for 3NF: split into CUSTOMER, PRODUCT, SALE and SALE_ITEM tables."
+  },
+  {
+   "q": "Which is a DDL command?",
+   "options": [
+    "CREATE TABLE",
+    "SELECT",
+    "INSERT",
+    "UPDATE"
+   ],
+   "answer": 0,
+   "explain": "DDL: CREATE, ALTER, DROP, TRUNCATE. INSERT/UPDATE/SELECT are DML/DQL."
+  },
+  {
+   "q": "In SQL LIKE, '%' and '_' mean…",
+   "options": [
+    "% = zero or more characters; _ = exactly one character",
+    "% = one char; _ = many",
+    "Both mean one char",
+    "Both are wildcards for numbers"
+   ],
+   "answer": 0,
+   "explain": "WHERE name LIKE 'J_n%' matches Jane, Jon, Jonathan."
+  },
+  {
+   "q": "From Student table (CCT, CCS, CCS, CIT), the most popular course is…",
+   "options": [
+    "CCS",
+    "CCT",
+    "CIT",
+    "Tie"
+   ],
+   "answer": 0,
+   "explain": "SELECT code, COUNT(*) FROM student GROUP BY code ORDER BY COUNT(*) DESC LIMIT 1;"
+  },
+  {
+   "q": "Candidate key vs super key?",
+   "options": [
+    "Super key is any unique set; candidate key is a minimal super key",
+    "They are identical",
+    "Candidate key allows duplicates",
+    "Super key is always one column"
+   ],
+   "answer": 0,
+   "explain": "Every candidate key is a super key, but not every super key is minimal."
+  },
+  {
+   "q": "Specialization in ER modelling is…",
+   "options": [
+    "Top-down: splitting an entity into sub-entities",
+    "Bottom-up merging",
+    "Deleting entities",
+    "Joining tables"
+   ],
+   "answer": 0,
+   "explain": "Aggregation treats a relationship as a higher-level entity."
+  },
+  {
+   "q": "A primary key is?",
+   "options": [
+    "A unique, non-null identifier for each row",
+    "A repeating column",
+    "A link to another database",
+    "Any text field"
+   ],
+   "answer": 0,
+   "explain": "One per row, never empty."
+  },
+  {
+   "q": "A foreign key?",
+   "options": [
+    "References the primary key of another table",
+    "Is always unique",
+    "Stores passwords",
+    "Replaces the primary key"
+   ],
+   "answer": 0,
+   "explain": "CustomerID in ORDERS."
+  },
+  {
+   "q": "First Normal Form requires?",
+   "options": [
+    "Atomic (single-valued) attributes",
+    "No partial dependencies",
+    "No transitive dependencies",
+    "No keys"
+   ],
+   "answer": 0,
+   "explain": "No repeating groups."
+  },
+  {
+   "q": "Second Normal Form removes?",
+   "options": [
+    "Partial dependencies",
+    "Transitive dependencies",
+    "Primary keys",
+    "Tables"
+   ],
+   "answer": 0,
+   "explain": "Non-key depends on part of key."
+  },
+  {
+   "q": "Third Normal Form removes?",
+   "options": [
+    "Transitive dependencies",
+    "Partial dependencies",
+    "Foreign keys",
+    "Rows"
+   ],
+   "answer": 0,
+   "explain": "Non-key depends on non-key."
+  },
+  {
+   "q": "COUNT(*) returns?",
+   "options": [
+    "Number of rows",
+    "Sum of a column",
+    "Highest value",
+    "Column names"
+   ],
+   "answer": 0,
+   "explain": "Aggregate function."
+  },
+  {
+   "q": "GROUP BY is used to?",
+   "options": [
+    "Group rows for aggregate functions",
+    "Sort rows",
+    "Delete rows",
+    "Join tables"
+   ],
+   "answer": 0,
+   "explain": "E.g. orders per customer."
+  },
+  {
+   "q": "HAVING differs from WHERE because it?",
+   "options": [
+    "Filters groups after aggregation",
+    "Filters before grouping",
+    "Sorts",
+    "Joins"
+   ],
+   "answer": 0,
+   "explain": "WHERE filters rows."
+  },
+  {
+   "q": "INNER JOIN returns?",
+   "options": [
+    "Rows with matches in both tables",
+    "All rows of the left table",
+    "All rows of both",
+    "Only unmatched rows"
+   ],
+   "answer": 0,
+   "explain": "Intersection."
+  },
+  {
+   "q": "Which is a DML command?",
+   "options": [
+    "INSERT",
+    "CREATE",
+    "ALTER",
+    "DROP"
+   ],
+   "answer": 0,
+   "explain": "INSERT, UPDATE, DELETE are DML."
+  },
+  {
+   "q": "DROP TABLE is what type of command?",
+   "options": [
+    "DDL",
+    "DML",
+    "DCL",
+    "TCL"
+   ],
+   "answer": 0,
+   "explain": "Changes structure."
+  },
+  {
+   "q": "Who handles database security and backups?",
+   "options": [
+    "Database administrator (DBA)",
+    "End user",
+    "Compiler",
+    "Network printer"
+   ],
+   "answer": 0,
+   "explain": "DBA role."
+  },
+  {
+   "q": "Logical data independence means?",
+   "options": [
+    "Changing the conceptual schema without changing external views",
+    "Changing hardware only",
+    "No schema",
+    "No data"
+   ],
+   "answer": 0,
+   "explain": "ANSI/SPARC benefit."
+  },
+  {
+   "q": "An entity in an ERD is?",
+   "options": [
+    "An object about which data is stored",
+    "A column",
+    "A SQL command",
+    "A key"
+   ],
+   "answer": 0,
+   "explain": "E.g. Customer."
+  },
+  {
+   "q": "A weak entity?",
+   "options": [
+    "Has no primary key of its own and depends on an owner",
+    "Has no attributes",
+    "Is always a table of numbers",
+    "Has two keys"
+   ],
+   "answer": 0,
+   "explain": "Needs an identifying relationship."
+  },
+  {
+   "q": "Sum of Total Amount in ORDERS (15,000+8,500+20,000+12,000)?",
+   "options": [
+    "55,500",
+    "45,500",
+    "53,500",
+    "60,000"
+   ],
+   "answer": 0,
+   "explain": "Add all four."
+  },
+  {
+   "q": "ORDER BY total DESC does what?",
+   "options": [
+    "Sorts highest first",
+    "Sorts lowest first",
+    "Groups",
+    "Deletes"
+   ],
+   "answer": 0,
+   "explain": "DESC is descending."
+  },
+  {
+   "q": "SELECT DISTINCT does what?",
+   "options": [
+    "Removes duplicate rows",
+    "Sorts",
+    "Counts",
+    "Joins"
+   ],
+   "answer": 0,
+   "explain": "Unique results only."
+  }
+ ],
+ "flashcards": [
+  {
+   "q": "1a(i) Define candidate key (2)",
+   "a": "A minimal set of attributes that uniquely identifies each tuple of a relation."
+  },
+  {
+   "q": "1a(ii) Conditions for a candidate key (4)",
+   "a": "Unique for every tuple; minimal (no proper subset is unique); values not null."
+  },
+  {
+   "q": "1b Data and database (2)",
+   "a": "Data: raw facts and figures. Database: organised collection of related data stored for easy access and management."
+  },
+  {
+   "q": "1c Redundancy can be beneficial and harmful (2)",
+   "a": "Harmful: wastes storage, causes inconsistency and anomalies. Beneficial when controlled: faster reads, backup/fault tolerance."
+  },
+  {
+   "q": "1d Procedures, who is responsible (4)",
+   "a": "Named, stored blocks of SQL/code kept in the database and run on demand. Written and managed by the DBA/developer to reuse logic, enforce rules and improve performance."
+  },
+  {
+   "q": "1e ANSI/SPARC and data independence (6)",
+   "a": "Three levels: external (user views), conceptual (whole logical schema), internal (physical storage). Data independence: change one level without affecting the one above (logical and physical independence)."
+  },
+  {
+   "q": "1f SELECT, FROM, WHERE (3)",
+   "a": "SELECT: columns to return. FROM: table(s) used. WHERE: filter rows by condition."
+  },
+  {
+   "q": "1g Normalization and significance (2)",
+   "a": "Organising tables (1NF, 2NF, 3NF) to remove redundancy and anomalies, keeping data consistent."
+  },
+  {
+   "q": "1h ERD for BIDII Wholesalers (5)",
+   "a": "Entities: Customer, Product, Order, Supplier, Employee. Customer 1—M Order; Order M—N Product (via Order_Item); Supplier 1—M Product; Employee 1—M Order (processes). Add keys such as CustomerID, OrderID."
+  },
+  {
+   "q": "Q2 Database life cycle for Mama Ngina store system (20)",
+   "a": "1 Requirements analysis; 2 conceptual design (ERD); 3 logical design (tables, keys, normalise); 4 physical design/implementation (DBMS, indexes); 5 data loading and testing; 6 deployment and training; 7 maintenance and backup. Tie each stage to the manager's daily-data needs."
+  },
+  {
+   "q": "Q3a Relationship between CUSTOMER and ORDERS (2)",
+   "a": "One-to-many (referential link by CustomerID)."
+  },
+  {
+   "q": "Q3b Primary keys and foreign key (3)",
+   "a": "PK: CUSTOMER(CustomerID), ORDERS(OrderID). FK in ORDERS: CustomerID."
+  },
+  {
+   "q": "Q3c Customer names with their orders (4)",
+   "a": "SELECT c.customer_name, o.order_id FROM customer c JOIN orders o ON c.customer_id=o.customer_id;"
+  },
+  {
+   "q": "Q3d Total orders by John Mwangi (3)",
+   "a": "SELECT COUNT(*) FROM orders o JOIN customer c ON o.customer_id=c.customer_id WHERE c.customer_name='John Mwangi';  Result: 2"
+  },
+  {
+   "q": "Q3e Customer with highest total spend (4)",
+   "a": "SELECT c.customer_name, SUM(o.total_amount) AS t FROM customer c JOIN orders o ON c.customer_id=o.customer_id GROUP BY c.customer_name ORDER BY t DESC LIMIT 1;  Result: John Mwangi (27,000)"
+  },
+  {
+   "q": "Q3f Why link by CustomerID, not names (4)",
+   "a": "IDs are unique, names can repeat or change; avoids ambiguity and update anomalies; saves space; enforces integrity."
+  },
+  {
+   "q": "Q4a(i) Redundancy and anomalies in SALES_RECORD (2)",
+   "a": "Customer name/phone repeated for S01. Update anomaly (change phone in many rows), insertion anomaly (can't add product without a sale), deletion anomaly (deleting a sale loses customer data)."
+  },
+  {
+   "q": "Q4a(ii) Normalize to 3NF (4)",
+   "a": "CUSTOMER(CustID, Name, Phone); PRODUCT(ProdID, Name, Price); SALE(SaleID, CustID FK); SALE_ITEM(SaleID, ProdID, Quantity). Total is derived (Quantity×Price)."
+  },
+  {
+   "q": "Q4b RDBMS and two examples (4)",
+   "a": "DBMS storing data in related tables linked by keys, queried with SQL. Examples: MySQL, Oracle, PostgreSQL, SQL Server."
+  },
+  {
+   "q": "Q4c OODBMS vs RDBMS (2)",
+   "a": "OODBMS stores data as objects (with methods, inheritance) and suits complex data; RDBMS stores rows in tables and uses SQL."
+  },
+  {
+   "q": "Q4d Two DDL examples (4)",
+   "a": "CREATE TABLE student(id INT PRIMARY KEY, name VARCHAR(50)); ALTER TABLE student ADD age INT;  (also DROP, TRUNCATE)"
+  },
+  {
+   "q": "Q4e % and _ in pattern searching (4)",
+   "a": "% = zero or more characters; _ = exactly one character. WHERE name LIKE 'J%' ; WHERE name LIKE '_a%'"
+  },
+  {
+   "q": "Q5a(i) Names of students pursuing IT (2)",
+   "a": "SELECT Name FROM Student WHERE Code='CIT';  (Nathan)"
+  },
+  {
+   "q": "Q5a(ii) Most popular course (2)",
+   "a": "SELECT Code, COUNT(*) AS n FROM Student GROUP BY Code ORDER BY n DESC LIMIT 1;  Result: CCS"
+  },
+  {
+   "q": "Q5b(i) Employees working for First Bank Corporation",
+   "a": "SELECT empname FROM Works WHERE companyname='First Bank Corporation';"
+  },
+  {
+   "q": "Q5b(ii) Name, street, city of those earning over 200000",
+   "a": "SELECT e.empname, e.street, e.city FROM Employee e JOIN Works w ON e.empname=w.empname WHERE w.companyname='First Bank Corporation' AND w.salary>200000;"
+  },
+  {
+   "q": "Q5b(iii) Employees living in the same city as their company",
+   "a": "SELECT e.empname FROM Employee e JOIN Works w ON e.empname=w.empname JOIN Company c ON w.companyname=c.companyname WHERE e.city=c.city;"
+  },
+  {
+   "q": "Q5c(i) Single-valued vs multi-valued attribute",
+   "a": "Single: one value per entity (date of birth). Multi-valued: several values (phone numbers)."
+  },
+  {
+   "q": "Q5c(ii) Derived vs non-derived",
+   "a": "Derived: computed from another attribute (age from DOB). Non-derived: stored directly."
+  },
+  {
+   "q": "Q5c(iii) Candidate key vs super key",
+   "a": "Super key: any attribute set that uniquely identifies tuples. Candidate key: a minimal super key."
+  },
+  {
+   "q": "Q5d(i) Aggregation",
+   "a": "Treating a relationship (with its entities) as a higher-level entity so it can take part in another relationship."
+  },
+  {
+   "q": "Q5d(ii) Specialization",
+   "a": "Top-down: splitting an entity into sub-entities with extra attributes (Employee into Manager, Clerk); uses ISA."
+  }
+ ]
+}

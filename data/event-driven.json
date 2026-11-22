@@ -1,0 +1,429 @@
+{
+ "title": "Event-Driven Programming (SCO 202)",
+ "questions": [
+  {
+   "q": "Variable vs constant in C#?",
+   "options": [
+    "Variable can change; constant (const) cannot",
+    "Both can change",
+    "Constants can change at runtime",
+    "No difference"
+   ],
+   "answer": 0,
+   "explain": "const double PI=3.14; int age=20;"
+  },
+  {
+   "q": "Which code shows the message box on btnSubmit click?",
+   "options": [
+    "private void btnSubmit_Click(object sender, EventArgs e){ MessageBox.Show(\"Submitted successfully!\"); }",
+    "btnSubmit.Print(\"Submitted\");",
+    "Console.Alert(\"Submitted\");",
+    "MessageBox(\"Submitted\")"
+   ],
+   "answer": 0,
+   "explain": "The handler is wired to the Click event."
+  },
+  {
+   "q": "Which is a valid C# identifier?",
+   "options": [
+    "_total",
+    "2total",
+    "my-total",
+    "class"
+   ],
+   "answer": 0,
+   "explain": "Cannot start with a digit, contain hyphens/spaces, or be a keyword."
+  },
+  {
+   "q": "A modal dialog…",
+   "options": [
+    "Must be closed before returning to the parent form (ShowDialog)",
+    "Lets you use other forms freely",
+    "Is shown with Show()",
+    "Is a console window"
+   ],
+   "answer": 0,
+   "explain": "Modeless uses Show() and doesn't block the parent."
+  },
+  {
+   "q": "Design-time vs run-time property changes?",
+   "options": [
+    "Design-time: Properties window; run-time: set in code",
+    "Both only in code",
+    "Design-time happens while running",
+    "No difference"
+   ],
+   "answer": 0,
+   "explain": "E.g. set Text in the designer, or btn.Text=\"Go\" in code."
+  },
+  {
+   "q": "A Windows Form is…",
+   "options": [
+    "A window with controls and events; unlike a text-only console",
+    "A console",
+    "A database",
+    "A compiler"
+   ],
+   "answer": 0,
+   "explain": "Forms are GUI windows; consoles are text-based."
+  },
+  {
+   "q": "Which declares a student's name, age and grade?",
+   "options": [
+    "string name=\"Ann\"; int age=20; char grade='A';",
+    "name string=\"Ann\";",
+    "int name=\"Ann\";",
+    "var age=\"20\" grade;"
+   ],
+   "answer": 0,
+   "explain": "Then Console.WriteLine(name+\" \"+age+\" \"+grade);"
+  },
+  {
+   "q": "An event in Windows Forms is…",
+   "options": [
+    "An action such as a click that triggers a handler",
+    "A variable type",
+    "A database row",
+    "A compile error"
+   ],
+   "answer": 0,
+   "explain": "Examples: Click, TextChanged, Load."
+  },
+  {
+   "q": "Program entry point in C#?",
+   "options": [
+    "Main method",
+    "Start()",
+    "Init()",
+    "Run()"
+   ],
+   "answer": 0,
+   "explain": "static void Main."
+  },
+  {
+   "q": "Declare an integer variable?",
+   "options": [
+    "int x = 5;",
+    "integer x = 5",
+    "x int = 5;",
+    "var int x;"
+   ],
+   "answer": 0,
+   "explain": "Type then name."
+  },
+  {
+   "q": "C# logical AND operator?",
+   "options": [
+    "&&",
+    "& only",
+    "||",
+    "and"
+   ],
+   "answer": 0,
+   "explain": "Short-circuit AND."
+  },
+  {
+   "q": "== in C# means?",
+   "options": [
+    "Equality comparison",
+    "Assignment",
+    "Not equal",
+    "Increment"
+   ],
+   "answer": 0,
+   "explain": "= assigns."
+  },
+  {
+   "q": "C# text type?",
+   "options": [
+    "string",
+    "text",
+    "str",
+    "char[] only"
+   ],
+   "answer": 0,
+   "explain": "Reference type for text."
+  },
+  {
+   "q": "Event handler parameters?",
+   "options": [
+    "object sender, EventArgs e",
+    "int a, int b",
+    "string s",
+    "none"
+   ],
+   "answer": 0,
+   "explain": "Standard signature."
+  },
+  {
+   "q": "Which shows a pop-up message?",
+   "options": [
+    "MessageBox.Show()",
+    "Console.Alert()",
+    "Form.Print()",
+    "Popup()"
+   ],
+   "answer": 0,
+   "explain": "Windows Forms."
+  },
+  {
+   "q": "Control for user text input?",
+   "options": [
+    "TextBox",
+    "Label",
+    "PictureBox",
+    "Timer"
+   ],
+   "answer": 0,
+   "explain": "Typing area."
+  },
+  {
+   "q": "Control for displaying static text?",
+   "options": [
+    "Label",
+    "TextBox",
+    "Button",
+    "ComboBox"
+   ],
+   "answer": 0,
+   "explain": "Captions."
+  },
+  {
+   "q": "Property holding a control's text?",
+   "options": [
+    "Text",
+    "Value",
+    "Caption",
+    "Name only"
+   ],
+   "answer": 0,
+   "explain": "textBox1.Text."
+  },
+  {
+   "q": "Hide a control in code?",
+   "options": [
+    "control.Visible = false",
+    "control.Hide = 1",
+    "control.Remove()",
+    "control.Gone"
+   ],
+   "answer": 0,
+   "explain": "Visible property."
+  },
+  {
+   "q": "Disable a button in code?",
+   "options": [
+    "button1.Enabled = false",
+    "button1.Disable()",
+    "button1.Locked = 1",
+    "button1.Off"
+   ],
+   "answer": 0,
+   "explain": "Enabled property."
+  },
+  {
+   "q": "A ComboBox provides?",
+   "options": [
+    "A drop-down list of choices",
+    "Free text only",
+    "Images",
+    "A timer"
+   ],
+   "answer": 0,
+   "explain": "Pick one item."
+  },
+  {
+   "q": "Convert text to int?",
+   "options": [
+    "int.Parse(textBox1.Text)",
+    "(int)textBox1",
+    "Int(textBox1)",
+    "toInt()"
+   ],
+   "answer": 0,
+   "explain": "Or Convert.ToInt32."
+  },
+  {
+   "q": "Which event runs when a form first loads?",
+   "options": [
+    "Load",
+    "Click",
+    "Close",
+    "KeyPress"
+   ],
+   "answer": 0,
+   "explain": "Form_Load handler."
+  },
+  {
+   "q": "ShowDialog() opens a form as?",
+   "options": [
+    "Modal",
+    "Modeless",
+    "Hidden",
+    "Console"
+   ],
+   "answer": 0,
+   "explain": "Blocks the parent."
+  },
+  {
+   "q": "Design-time properties are set in?",
+   "options": [
+    "The Properties window",
+    "Only code",
+    "The console",
+    "Task Manager"
+   ],
+   "answer": 0,
+   "explain": "Visual Studio designer."
+  },
+  {
+   "q": "Which file holds designer-generated layout code?",
+   "options": [
+    "Form1.Designer.cs",
+    "Program.cs only",
+    "App.config",
+    "Form1.resx only"
+   ],
+   "answer": 0,
+   "explain": "Auto-generated."
+  },
+  {
+   "q": "DialogResult.OK means?",
+   "options": [
+    "User clicked OK",
+    "User cancelled",
+    "Form closed by error",
+    "Timer fired"
+   ],
+   "answer": 0,
+   "explain": "Returned by dialog."
+  },
+  {
+   "q": "Which keyword declares a constant?",
+   "options": [
+    "const",
+    "final",
+    "static only",
+    "fixed"
+   ],
+   "answer": 0,
+   "explain": "Value can't change."
+  },
+  {
+   "q": "Hide characters in a password TextBox?",
+   "options": [
+    "UseSystemPasswordChar = true",
+    "Hidden = true",
+    "Mask = 1",
+    "Secret = true"
+   ],
+   "answer": 0,
+   "explain": "Or PasswordChar."
+  },
+  {
+   "q": "Loop that repeats a known number of times?",
+   "options": [
+    "for",
+    "if",
+    "switch",
+    "try"
+   ],
+   "answer": 0,
+   "explain": "Counter-controlled."
+  }
+ ],
+ "flashcards": [
+  {
+   "q": "1a Variable vs constant in C# (3)",
+   "a": "Variable value can change (int age=20;). Constant is fixed at compile time (const double PI=3.14;)."
+  },
+  {
+   "q": "1b Three rules for identifiers (3)",
+   "a": "Start with a letter or underscore; no spaces or special symbols; cannot be a keyword; case-sensitive."
+  },
+  {
+   "q": "1c Expression with arithmetic, relational, logical operators (6)",
+   "a": "if ((a + b) * 2 > 20 && a != b) { ... }  Arithmetic: + and *; relational: > and !=; logical: &&."
+  },
+  {
+   "q": "1d Define an event in Windows Forms with example (4)",
+   "a": "An action that happens to a control and triggers code, e.g. a Button Click or TextBox TextChanged."
+  },
+  {
+   "q": "1e How a click event handler works (5)",
+   "a": "private void btnOk_Click(object sender, EventArgs e){ lblMsg.Text=\"Hello\"; }  The handler is subscribed to the Click event; when clicked, the runtime calls it."
+  },
+  {
+   "q": "1f Declare and print student's name, age, grade (3)",
+   "a": "string name=\"Ann\"; int age=20; char grade='A'; Console.WriteLine(name+\" \"+age+\" \"+grade);"
+  },
+  {
+   "q": "1g Four reasons event-driven programming matters + example (5)",
+   "a": "Responsive UI; user controls the flow; efficient (code runs only on events); modular handlers. Example: a POS app that updates totals when a button is clicked."
+  },
+  {
+   "q": "2a Three examples of properties of controls (6)",
+   "a": "Text (caption), BackColor (colour), Enabled (can interact); also Name, Size, Visible."
+  },
+  {
+   "q": "2b btnSubmit shows 'Submitted successfully!' (6)",
+   "a": "private void btnSubmit_Click(object sender, EventArgs e){ MessageBox.Show(\"Submitted successfully!\"); }"
+  },
+  {
+   "q": "2c Design-time vs run-time properties (4)",
+   "a": "Design-time: set in the Properties window (button1.Text='Save'). Run-time: set in code (button1.Text='Saving...')."
+  },
+  {
+   "q": "2d Four reasons to manage property values properly (4)",
+   "a": "Consistent appearance; prevent invalid input (Enabled/ReadOnly); better usability and accessibility; easier maintenance."
+  },
+  {
+   "q": "3a Purpose of project documentation (4)",
+   "a": "Records requirements, design and usage; helps maintenance and handover; communication; supports testing and training."
+  },
+  {
+   "q": "3b Modal vs modeless dialog forms (4)",
+   "a": "Modal: must be closed before using the parent (ShowDialog()). Modeless: user can switch freely (Show())."
+  },
+  {
+   "q": "3c Three purposes of a dialog box in student registration (6)",
+   "a": "Confirm actions (delete); show messages/errors; collect extra input (login, choose course); open/save files."
+  },
+  {
+   "q": "3d Implement a login dialog in a SIMS (6)",
+   "a": "Create frmLogin with username, password (UseSystemPasswordChar), Login button; on click validate against database; if valid, DialogResult.OK and open the main form; limit attempts."
+  },
+  {
+   "q": "4a User requirements and four reasons they're critical (6)",
+   "a": "Needs and expectations from users. Critical: guide design, avoid rework, set scope, basis for testing, user satisfaction."
+  },
+  {
+   "q": "4b Four SIMS requirements (4)",
+   "a": "Register students; record grades; view/search records; generate reports; user login."
+  },
+  {
+   "q": "4c Translating requirements into UI design (6)",
+   "a": "Analyse requirements → identify inputs/outputs → choose controls → sketch forms → map actions to events → test with users."
+  },
+  {
+   "q": "4d Three SIMS requirements mapped to Windows Form features (4)",
+   "a": "Enter student details → TextBoxes; select course → ComboBox; save record → Button with Click handler."
+  },
+  {
+   "q": "5a Form in Windows Forms vs console window (4)",
+   "a": "A form is a graphical window holding controls and responding to events; a console is text-only, sequential input/output."
+  },
+  {
+   "q": "5b Steps to create a Windows Form in Visual Studio (6)",
+   "a": "File > New > Project; choose Windows Forms App; name and create; Form1 appears in designer; add controls from Toolbox; set properties; double-click to write handlers; run."
+  },
+  {
+   "q": "5c Three common controls and use cases (6)",
+   "a": "TextBox: user text input. Button: triggers actions. Label: displays text/instructions. (Also ComboBox, CheckBox.)"
+  },
+  {
+   "q": "5d Three factors why form design matters (4)",
+   "a": "Usability and ease of learning; efficiency and fewer errors; consistent professional look."
+  }
+ ]
+}

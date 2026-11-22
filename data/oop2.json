@@ -1,0 +1,405 @@
+{
+ "title": "OOP II - Java GUI (SCO 200)",
+ "questions": [
+  {
+   "q": "How do Swing and AWT differ?",
+   "options": [
+    "Swing is lightweight and pure Java; AWT uses heavyweight native peers",
+    "AWT is lightweight; Swing is native",
+    "Both are heavyweight",
+    "Swing is only for web"
+   ],
+   "answer": 0,
+   "explain": "Swing components are drawn by Java itself (platform independent, pluggable look and feel). AWT wraps OS widgets."
+  },
+  {
+   "q": "Contextual awareness in GUI design means the interface…",
+   "options": [
+    "Adapts to the user's situation (location, role, device, task)",
+    "Uses only one colour",
+    "Has no menus",
+    "Runs offline"
+   ],
+   "answer": 0,
+   "explain": "Ways to realise it: adapting content to the user's context, and context-sensitive help/menus."
+  },
+  {
+   "q": "Which is part of the Java Foundation Classes besides Swing and AWT?",
+   "options": [
+    "Java Accessibility API",
+    "JDBC",
+    "RMI",
+    "JavaMail"
+   ],
+   "answer": 0,
+   "explain": "JFC also includes the Java 2D API, Accessibility API and drag-and-drop (data transfer)."
+  },
+  {
+   "q": "Which is NOT a component of the Z layout?",
+   "options": [
+    "A vertical sidebar line",
+    "Top horizontal line",
+    "Diagonal line",
+    "Bottom horizontal line"
+   ],
+   "answer": 0,
+   "explain": "Z layout: eyes scan the top horizontal, then diagonal, then bottom horizontal."
+  },
+  {
+   "q": "Controls vs containers in GUI design?",
+   "options": [
+    "Controls are what the user interacts with; containers hold/store components",
+    "Containers are buttons; controls are panels",
+    "They are the same",
+    "Controls hold components; containers are clickable"
+   ],
+   "answer": 0,
+   "explain": "Controls: JButton, JTextField. Containers: JFrame, JPanel."
+  },
+  {
+   "q": "Which is a type of consistency in GUI design?",
+   "options": [
+    "Visual consistency",
+    "Cryptographic consistency",
+    "Transactional consistency",
+    "Referential consistency"
+   ],
+   "answer": 0,
+   "explain": "Also functional, internal and external consistency."
+  },
+  {
+   "q": "KPLC tariff (0–50 @10, 51–200 @15). Bill for 120 units?",
+   "options": [
+    "Ksh 1,550",
+    "Ksh 1,200",
+    "Ksh 1,800",
+    "Ksh 2,400"
+   ],
+   "answer": 0,
+   "explain": "50×10=500 plus 70×15=1,050, total 1,550. Show the result in a JTextField."
+  },
+  {
+   "q": "Which is NOT a part of Model-View-Controller?",
+   "options": [
+    "Compiler",
+    "Model",
+    "View",
+    "Controller"
+   ],
+   "answer": 0,
+   "explain": "Model=data/logic, View=display, Controller=handles input and updates both."
+  },
+  {
+   "q": "Which JDBC SQL correctly deletes a student by registration number?",
+   "options": [
+    "DELETE FROM student_details WHERE reg_no=?",
+    "DROP student_details WHERE reg_no=?",
+    "REMOVE student_details reg_no=?",
+    "DELETE student_details SET reg_no=?"
+   ],
+   "answer": 0,
+   "explain": "Use a PreparedStatement: ps.setString(1,reg); ps.executeUpdate();"
+  },
+  {
+   "q": "Which package holds JButton?",
+   "options": [
+    "javax.swing",
+    "java.awt.event",
+    "java.util",
+    "java.sql"
+   ],
+   "answer": 0,
+   "explain": "Swing classes start with J."
+  },
+  {
+   "q": "Which layout arranges components in rows and columns?",
+   "options": [
+    "GridLayout",
+    "FlowLayout",
+    "CardLayout",
+    "None"
+   ],
+   "answer": 0,
+   "explain": "Equal-size grid cells."
+  },
+  {
+   "q": "Which interface handles button clicks?",
+   "options": [
+    "ActionListener",
+    "KeyListener",
+    "MouseMotionListener",
+    "WindowListener"
+   ],
+   "answer": 0,
+   "explain": "actionPerformed()."
+  },
+  {
+   "q": "Method to put text into a JTextField?",
+   "options": [
+    "setText()",
+    "getText()",
+    "append()",
+    "writeText()"
+   ],
+   "answer": 0,
+   "explain": "setText(String)."
+  },
+  {
+   "q": "JTextField.getText() returns?",
+   "options": [
+    "String",
+    "int",
+    "double",
+    "char"
+   ],
+   "answer": 0,
+   "explain": "Always text; parse it."
+  },
+  {
+   "q": "Make a result JTextField read-only with?",
+   "options": [
+    "setEditable(false)",
+    "setEnabled(true)",
+    "setReadOnly(true)",
+    "lock()"
+   ],
+   "answer": 0,
+   "explain": "Swing uses setEditable."
+  },
+  {
+   "q": "Top-level Swing window container?",
+   "options": [
+    "JFrame",
+    "JPanel",
+    "JLabel",
+    "JButton"
+   ],
+   "answer": 0,
+   "explain": "JFrame is the window."
+  },
+  {
+   "q": "Which is a heavyweight AWT component?",
+   "options": [
+    "java.awt.Button",
+    "JButton",
+    "JLabel",
+    "JPanel"
+   ],
+   "answer": 0,
+   "explain": "AWT uses native peers."
+  },
+  {
+   "q": "Purpose of JLabel?",
+   "options": [
+    "Display text or an image",
+    "Take user input",
+    "Hold components only",
+    "Run SQL"
+   ],
+   "answer": 0,
+   "explain": "Static caption."
+  },
+  {
+   "q": "JComboBox is used for?",
+   "options": [
+    "Choosing from a drop-down list",
+    "Typing free text",
+    "Showing images",
+    "Drawing graphs"
+   ],
+   "answer": 0,
+   "explain": "E.g. destination choice."
+  },
+  {
+   "q": "Integer.parseInt() does what?",
+   "options": [
+    "Converts a String to int",
+    "Converts int to String",
+    "Rounds a double",
+    "Parses SQL"
+   ],
+   "answer": 0,
+   "explain": "Needed for units entered."
+  },
+  {
+   "q": "In MVC the Controller does what?",
+   "options": [
+    "Handles input and updates model/view",
+    "Stores data",
+    "Draws the screen",
+    "Compiles code"
+   ],
+   "answer": 0,
+   "explain": "Mediator."
+  },
+  {
+   "q": "Which class runs parameterised SQL safely?",
+   "options": [
+    "PreparedStatement",
+    "ResultSet",
+    "DriverManager",
+    "JTable"
+   ],
+   "answer": 0,
+   "explain": "Prevents SQL injection."
+  },
+  {
+   "q": "SQL to add a student row?",
+   "options": [
+    "INSERT INTO student_details VALUES (...)",
+    "ADD student_details",
+    "UPDATE student_details NEW",
+    "CREATE ROW"
+   ],
+   "answer": 0,
+   "explain": "INSERT adds rows."
+  },
+  {
+   "q": "Which method runs INSERT, UPDATE or DELETE?",
+   "options": [
+    "executeUpdate()",
+    "executeQuery()",
+    "getResult()",
+    "runSQL()"
+   ],
+   "answer": 0,
+   "explain": "executeQuery is for SELECT."
+  },
+  {
+   "q": "executeQuery() returns?",
+   "options": [
+    "ResultSet",
+    "int",
+    "boolean",
+    "String"
+   ],
+   "answer": 0,
+   "explain": "Iterate with rs.next()."
+  },
+  {
+   "q": "Default layout of a JFrame content pane?",
+   "options": [
+    "BorderLayout",
+    "FlowLayout",
+    "GridLayout",
+    "BoxLayout"
+   ],
+   "answer": 0,
+   "explain": "Five regions."
+  },
+  {
+   "q": "Fare for 3 passengers Nairobi–Juja (Ksh 80 each)?",
+   "options": [
+    "Ksh 240",
+    "Ksh 80",
+    "Ksh 300",
+    "Ksh 210"
+   ],
+   "answer": 0,
+   "explain": "3×80."
+  },
+  {
+   "q": "KPLC bill for 250 units (tiered)?",
+   "options": [
+    "Ksh 3,750",
+    "Ksh 5,000",
+    "Ksh 3,250",
+    "Ksh 4,000"
+   ],
+   "answer": 0,
+   "explain": "500+2250+50×20."
+  },
+  {
+   "q": "Which closes the app when the window closes?",
+   "options": [
+    "setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)",
+    "frame.hide()",
+    "System.pause()",
+    "frame.stop()"
+   ],
+   "answer": 0,
+   "explain": "Otherwise the JVM keeps running."
+  },
+  {
+   "q": "A drawback of GUI applications?",
+   "options": [
+    "Higher memory/CPU use than command line",
+    "No user feedback",
+    "Cannot use databases",
+    "Always slower to learn"
+   ],
+   "answer": 0,
+   "explain": "Graphics cost resources."
+  }
+ ],
+ "flashcards": [
+  {
+   "q": "1.1 AWT vs Swing (4)",
+   "a": "AWT: heavyweight, uses native OS peers, platform look, fewer components. Swing: lightweight pure Java, pluggable look-and-feel, richer components (JButton, JTable), built on AWT."
+  },
+  {
+   "q": "1.2 Contextual awareness + two ways (6)",
+   "a": "GUI adapts to the user's context (location, role, device, task). Realised by: context-sensitive help/menus; adapting content or layout from user data, device or sensors."
+  },
+  {
+   "q": "1.3 Three other Java Foundation Classes parts (6)",
+   "a": "Java 2D API, Java Accessibility API, Java Beans API (from your notes; also drag-and-drop)."
+  },
+  {
+   "q": "1.4 Two types of consistency (4)",
+   "a": "Visual (same fonts, colours, icons, layout) and functional (same action behaves the same everywhere). Also internal and external."
+  },
+  {
+   "q": "1.5 Three components of Z layout (6)",
+   "a": "Top horizontal line (logo/navigation); diagonal line (eye moves to bottom-left); bottom horizontal line (call to action)."
+  },
+  {
+   "q": "1.6 Controls vs containers (4)",
+   "a": "Controls: what the user interacts with (JButton, JTextField). Containers: hold and organise components (JFrame, JPanel)."
+  },
+  {
+   "q": "2.i Swing components for bus billing + justify (6)",
+   "a": "JFrame (window), JComboBox (destination), JSpinner/JTextField (seats), JLabel (captions), JButton (Compute), non-editable JTextField (total)."
+  },
+  {
+   "q": "2.ii Sketch the GUI (6)",
+   "a": "Title bar; Destination combo (Thika/Juja/Ruiru); Passengers field; Compute Fare button; Total field at the bottom."
+  },
+  {
+   "q": "2.iii Four ways to enhance UX (8)",
+   "a": "Input validation with clear messages; sensible defaults; tooltips/labels; consistent layout and colours; keyboard shortcuts; fast feedback; accessibility."
+  },
+  {
+   "q": "3.i KPLC GUI design (6)",
+   "a": "JFrame with JLabel + JTextField (units), JButton 'Compute Bill', non-editable JTextField (result); GridLayout or BorderLayout."
+  },
+  {
+   "q": "3.ii KPLC code (14)",
+   "a": "In the button's ActionListener: int u=Integer.parseInt(unitsField.getText()); double b; if(u<=50) b=u*10; else if(u<=200) b=500+(u-50)*15; else if(u<=500) b=2750+(u-200)*20; else b=8750+(u-500)*25; billField.setText(String.valueOf(b));  (500+2250=2750; +6000=8750)"
+  },
+  {
+   "q": "4.1 Three benefits of modularity (6)",
+   "a": "Easier maintenance and debugging; reuse of modules; parallel team development and testing; better readability."
+  },
+  {
+   "q": "4.2 Three MVC components (6)",
+   "a": "Model (data and logic); View (display); Controller (takes input, updates model and view)."
+  },
+  {
+   "q": "4.3 Four drawbacks of GUI apps (8)",
+   "a": "Higher memory/CPU use; costlier and slower to develop; slower for expert users than command line; hard to automate/script; needs display hardware; can be cluttered."
+  },
+  {
+   "q": "5.i Java code to UPDATE a record (8)",
+   "a": "String sql=\"UPDATE student_details SET first_name=?, last_name=?, course=? WHERE reg_no=?\"; PreparedStatement ps=con.prepareStatement(sql); ps.setString(1,fn); ps.setString(2,ln); ps.setString(3,course); ps.setString(4,reg); ps.executeUpdate();  (inside Update button's actionPerformed, in try/catch)"
+  },
+  {
+   "q": "5.ii Java code to DELETE a record (6)",
+   "a": "PreparedStatement ps=con.prepareStatement(\"DELETE FROM student_details WHERE reg_no=?\"); ps.setString(1,reg); ps.executeUpdate();"
+  },
+  {
+   "q": "5.iii Three alternative events to search by reg number (6)",
+   "a": "Press Enter in the reg-number field (ActionListener); focusLost on that field; keyReleased (type-ahead search); selecting a row/item from a JTable or JComboBox; form load."
+  }
+ ]
+}

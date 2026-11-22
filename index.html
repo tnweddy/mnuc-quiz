@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MNUC Exam Study Quiz</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#1b1f2a;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:700px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:4px 0 12px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+button,input{font:inherit}
+.chip{flex:none;border:1px solid #dfe2ea;background:#fff;color:#1b1f2a;padding:8px 12px;border-radius:999px;font-size:14px;cursor:pointer}
+.chip.on{background:#2f4fd8;color:#fff;border-color:#2f4fd8}
+input{padding:10px;border:1px solid #dfe2ea;border-radius:8px;flex:1;min-width:140px}
+.btn{padding:10px 14px;border:0;border-radius:8px;background:#2f4fd8;color:#fff;font-weight:600;cursor:pointer}
+.btn.g{background:#fff;color:#1b1f2a;border:1px solid #dfe2ea}.btn:disabled{opacity:.4;cursor:default}
+.card{border:1px solid #dfe2ea;border-radius:14px;padding:16px;margin-top:12px;background:#fff}
+.meta{display:flex;justify-content:space-between;color:#667;font-size:14px}
+.bar{height:6px;background:#eceef4;border-radius:6px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:#2f4fd8}
+.q{font-weight:600;margin:0 0 10px}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px;border:1px solid #dfe2ea;background:#fff;color:#1b1f2a;border-radius:10px;cursor:pointer}
+.opt:disabled{cursor:default}.opt.ok{background:#e3f6e8;border-color:#2b8a3e}.opt.no{background:#fde8e8;border-color:#c92a2a}
+.ex{margin-top:10px;padding:12px;border-radius:10px;background:#f4f5f9;font-size:15px}
+.lock{font-size:13px;color:#667;margin-top:8px}
+details{border:1px solid #dfe2ea;border-radius:10px;padding:10px 12px;margin:8px 0}summary{font-weight:600;cursor:pointer}
+.sm{font-size:14px;color:#667}
+</style></head><body><main>
+<h1>MNUC Exam Study Quiz</h1>
+<div class="row"><input id="name" placeholder="Your name (this is your save slot)"><button class="btn" id="go">Start</button><button class="btn g" id="lbb">Leaderboard</button></div>
+<div id="status" class="sm"></div><div id="lb" class="sm"></div>
+<div class="row tabs" id="tabs"></div>
+<div class="row"><button class="chip" id="mq">Quiz</button><button class="chip" id="mc">Paper questions (flashcards)</button></div>
+<div id="app"></div>
+</main>
+<script src="config.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e};
+const CFG=window.QUIZ_CONFIG||{},ONLINE=!!(CFG.supabaseUrl&&CFG.supabaseKey);
+const H=ONLINE?{apikey:CFG.supabaseKey,"Content-Type":"application/json",...(CFG.supabaseKey.startsWith("eyJ")?{Authorization:"Bearer "+CFG.supabaseKey}:{})}:{};
+const API=ONLINE?CFG.supabaseUrl.replace(/\/$/,"")+"/rest/v1/answers":"";
+let S=[],cur=null,mode="quiz",me=localStorage.getItem("mnuc_me")||"",saved={},i=0;
+const key=()=>me.trim().toLowerCase();
+const hash=s=>{let x=5381;for(const c of s)x=((x*33)^c.charCodeAt(0))>>>0;return x.toString(36)};
+const shuf=a=>{a=a.slice();for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a};
+
+async function boot(){
+  $("name").value=me;
+  const ids=await (await fetch("data/subjects.json")).json();
+  S=await Promise.all(ids.map(async id=>{const d=await (await fetch("data/"+id+".json")).json();d.id=id;
+    d.questions.forEach(q=>q.id=q.id||id+"-"+hash(q.q));return d}));
+  cur=S[0];
+  $("status").textContent=ONLINE?"Progress saves to the shared database.":"Offline mode: progress saves in this browser only.";
+  if(me)await load();else render();
+}
+async function load(){
+  saved={};
+  try{
+    if(ONLINE){const r=await fetch(API+"?select=qid,correct,choice&name=eq."+encodeURIComponent(key()),{headers:H});
+      if(r.ok)(await r.json()).forEach(x=>saved[x.qid]=x)}
+    else saved=JSON.parse(localStorage.getItem("ans_"+key())||"{}");
+  }catch(e){$("status").textContent="Could not load saved progress."}
+  firstOpen();render();
+}
+function firstOpen(){i=cur.questions.findIndex(q=>!saved[q.id]);if(i<0)i=cur.questions.length}
+async function save(q,choice,ok){
+  const row={name:key(),qid:q.id,subject:cur.id,choice,correct:ok};
+  if(ONLINE){const r=await fetch(API,{method:"POST",headers:{...H,Prefer:"return=minimal"},body:JSON.stringify(row)});
+    if(!r.ok&&r.status!==409)throw new Error("save failed")}
+  else{saved[q.id]=row;localStorage.setItem("ans_"+key(),JSON.stringify(saved))}
+}
+function render(){
+  $("tabs").innerHTML="";
+  S.forEach(s=>{const b=el("button","chip"+(s===cur?" on":""),s.title);b.onclick=()=>{cur=s;firstOpen();render()};$("tabs").appendChild(b)});
+  $("mq").className="chip"+(mode==="quiz"?" on":"");$("mc").className="chip"+(mode==="cards"?" on":"");
+  const A=$("app");A.innerHTML="";
+  if(mode==="cards"){(cur.flashcards||[]).forEach(x=>{const d=el("details"),s=el("summary",0,x.q);d.append(s,el("div","ex",x.a));A.appendChild(d)});return}
+  if(!key()){A.appendChild(el("div","card","Enter your name above and press Start to begin."));return}
+  const Q=cur.questions,n=Q.length,answered=Q.filter(q=>saved[q.id]).length,right=Q.filter(q=>saved[q.id]&&saved[q.id].correct).length;
+  const m=el("div","meta");m.append(el("span",0,i<n?"Question "+(i+1)+" of "+n:"Finished"),el("span",0,answered+"/"+n+" answered, "+right+" correct"));
+  const bar=el("div","bar");const f=el("i");f.style.width=(answered/n*100)+"%";bar.appendChild(f);A.append(m,bar);
+  if(i>=n){const c=el("div","card");c.append(el("div","q","All done: "+right+" of "+n+" correct ("+Math.round(right/n*100)+"%)"),el("div","sm","Answers are permanent. Try another subject."));A.appendChild(c);nav(A,n);return}
+  const q=Q[i],s=saved[q.id],c=el("div","card");c.appendChild(el("p","q",q.q));
+  const opts=shuf(q.options.map((t,k)=>({t,c:k===q.answer})));
+  opts.forEach(o=>{const b=el("button","opt",o.t);
+    if(s){b.disabled=true;if(o.c)b.className+=" ok";else if(o.t===s.choice)b.className+=" no"}
+    else b.onclick=()=>pick(q,o,c);
+    c.appendChild(b)});
+  if(s){c.appendChild(el("div","ex",(s.correct?"Correct. ":"Not quite. ")+(q.explain||"")));c.appendChild(el("div","lock","Locked: this answer is saved and can't be changed."))}
+  A.appendChild(c);nav(A,n);
+}
+async function pick(q,o,card){
+  card.querySelectorAll(".opt").forEach(b=>b.disabled=true);
+  try{await save(q,o.t,o.c);saved[q.id]={qid:q.id,choice:o.t,correct:o.c};render()}
+  catch(e){card.querySelectorAll(".opt").forEach(b=>b.disabled=false);$("status").textContent="Save failed. Check your connection and try again."}
+}
+function nav(A,n){
+  const r=el("div","row"),p=el("button","btn g","Back"),x=el("button","btn",i>=n-1?"Finish":"Next");
+  p.disabled=i<=0;p.onclick=()=>{i--;render()};
+  x.disabled=i>=n||(i<n&&!saved[cur.questions[i].id]);x.onclick=()=>{i++;render()};
+  if(i>=n)x.style.display="none";
+  r.append(p,x);A.appendChild(r);
+}
+$("go").onclick=()=>{const n=$("name").value.trim();if(!n)return;me=n;localStorage.setItem("mnuc_me",n);load()};
+$("mq").onclick=()=>{mode="quiz";render()};$("mc").onclick=()=>{mode="cards";render()};
+$("lbb").onclick=async()=>{
+  const o=$("lb");o.textContent="Loading...";
+  if(!ONLINE){o.textContent="Leaderboard needs the database (see README).";return}
+  try{const r=await fetch(API+"?select=name,correct&limit=10000",{headers:H}),t={};
+    (await r.json()).forEach(x=>{t[x.name]=t[x.name]||[0,0];t[x.name][1]++;if(x.correct)t[x.name][0]++});
+    const rows=Object.entries(t).sort((a,b)=>b[1][0]-a[1][0]);
+    o.innerHTML="";rows.forEach(([n,v],k)=>o.appendChild(el("div",0,(k+1)+". "+n+": "+v[0]+" correct of "+v[1]+" answered")));
+    if(!rows.length)o.textContent="No one yet."}catch(e){o.textContent="Could not load."}
+};
+boot();
+</script></body></html>

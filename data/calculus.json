@@ -1,0 +1,369 @@
+{
+ "title": "Calculus II (SMA 200)",
+ "questions": [
+  {
+   "q": "Particle: V(t)=6t+15, x(2)=45. What is the initial velocity?",
+   "options": [
+    "15 m/s",
+    "6 m/s",
+    "45 m/s",
+    "0 m/s"
+   ],
+   "answer": 0,
+   "explain": "Initial velocity is V(0)=6(0)+15=15 m/s."
+  },
+  {
+   "q": "Which position function x(t) fits V(t)=6t+15 with x(2)=45?",
+   "options": [
+    "3t²+15t+3",
+    "6t²+15t",
+    "3t²+15t",
+    "3t²+15t+45"
+   ],
+   "answer": 0,
+   "explain": "Integrate: x=3t²+15t+c. 12+30+c=45 gives c=3."
+  },
+  {
+   "q": "Displacement of the particle after 4 seconds, x(4)?",
+   "options": [
+    "111 m",
+    "96 m",
+    "66 m",
+    "123 m"
+   ],
+   "answer": 0,
+   "explain": "x(4)=3(16)+15(4)+3=48+60+3=111 m."
+  },
+  {
+   "q": "Total distance travelled between t=2 and t=4 s?",
+   "options": [
+    "66 m",
+    "111 m",
+    "45 m",
+    "156 m"
+   ],
+   "answer": 0,
+   "explain": "V stays positive, so distance=x(4)−x(2)=111−45=66 m."
+  },
+  {
+   "q": "Volume when f(x)=x²+1 from x=−1 to 1 is revolved about the x-axis?",
+   "options": [
+    "56π/15",
+    "8π/3",
+    "32π/15",
+    "4π"
+   ],
+   "answer": 0,
+   "explain": "V=π∫(x²+1)²dx=π[x⁵/5+2x³/3+x] from −1 to 1=π(2/5+4/3+2)=56π/15≈11.73."
+  },
+  {
+   "q": "Exact value of ∫₀¹ 4/(1+x²) dx?",
+   "options": [
+    "π",
+    "π/2",
+    "4",
+    "ln 4"
+   ],
+   "answer": 0,
+   "explain": "4·arctan(x) from 0 to 1=4(π/4)=π≈3.14159."
+  },
+  {
+   "q": "Trapezoidal rule, five ordinates (h=0.25), for ∫₀¹ 4/(1+x²)dx?",
+   "options": [
+    "≈3.1312",
+    "≈3.1416",
+    "≈3.2000",
+    "≈3.0000"
+   ],
+   "answer": 0,
+   "explain": "h/2[4+2+2(3.7647+3.2+2.56)]=0.125×25.049≈3.1312 (slightly under π)."
+  },
+  {
+   "q": "Simpson's rule with five ordinates gives ≈3.1416. Compared with the trapezoidal value, Simpson's is…",
+   "options": [
+    "Closer to the exact value π",
+    "Further from π",
+    "Identical",
+    "Exactly π"
+   ],
+   "answer": 0,
+   "explain": "Simpson uses parabolic arcs, so it is more accurate: error is about 0.0000 vs 0.0104 for trapezoidal."
+  },
+  {
+   "q": "Acceleration of a particle with V(t)=6t+15?",
+   "options": [
+    "6 m/s²",
+    "15 m/s²",
+    "6t m/s²",
+    "21 m/s²"
+   ],
+   "answer": 0,
+   "explain": "a=dV/dt=6."
+  },
+  {
+   "q": "Velocity of V(t)=6t+15 at t=3 s?",
+   "options": [
+    "33 m/s",
+    "18 m/s",
+    "27 m/s",
+    "45 m/s"
+   ],
+   "answer": 0,
+   "explain": "6(3)+15=33."
+  },
+  {
+   "q": "∫(6t+15)dt equals?",
+   "options": [
+    "3t²+15t+C",
+    "6t²+15t+C",
+    "3t²+15+C",
+    "12t+15+C"
+   ],
+   "answer": 0,
+   "explain": "Raise power and divide."
+  },
+  {
+   "q": "With x(t)=3t²+15t+3, x(3)=?",
+   "options": [
+    "75 m",
+    "72 m",
+    "63 m",
+    "81 m"
+   ],
+   "answer": 0,
+   "explain": "27+45+3=75."
+  },
+  {
+   "q": "With x(t)=3t²+15t+3, distance from t=0 to t=2?",
+   "options": [
+    "42 m",
+    "45 m",
+    "48 m",
+    "30 m"
+   ],
+   "answer": 0,
+   "explain": "x(2)−x(0)=45−3."
+  },
+  {
+   "q": "For V=6t+15, when is V=45 m/s?",
+   "options": [
+    "t=5 s",
+    "t=3 s",
+    "t=7.5 s",
+    "t=4 s"
+   ],
+   "answer": 0,
+   "explain": "6t=30."
+  },
+  {
+   "q": "∫₀¹ x² dx = ?",
+   "options": [
+    "1/3",
+    "1/2",
+    "1",
+    "2/3"
+   ],
+   "answer": 0,
+   "explain": "[x³/3] from 0 to 1."
+  },
+  {
+   "q": "d/dx[tan⁻¹x] = ?",
+   "options": [
+    "1/(1+x²)",
+    "1/(1−x²)",
+    "sec²x",
+    "1/x"
+   ],
+   "answer": 0,
+   "explain": "Standard derivative."
+  },
+  {
+   "q": "∫ 1/(1+x²) dx = ?",
+   "options": [
+    "tan⁻¹x + C",
+    "ln(1+x²)+C",
+    "sin⁻¹x + C",
+    "1/x + C"
+   ],
+   "answer": 0,
+   "explain": "Inverse of the derivative above."
+  },
+  {
+   "q": "Trapezoidal rule formula (ordinates y0…yn, width h)?",
+   "options": [
+    "h/2[y0+yn+2(y1+…+yn−1)]",
+    "h/3[y0+4y1+…]",
+    "h[y0+…+yn]",
+    "h/2[y0+y1]"
+   ],
+   "answer": 0,
+   "explain": "Ends once, middles twice."
+  },
+  {
+   "q": "Simpson's 1/3 rule needs?",
+   "options": [
+    "An even number of intervals",
+    "An odd number of intervals",
+    "Exactly two ordinates",
+    "Sorted data"
+   ],
+   "answer": 0,
+   "explain": "Odd ordinates count."
+  },
+  {
+   "q": "Five ordinates on [0,1] give h=?",
+   "options": [
+    "0.25",
+    "0.2",
+    "0.5",
+    "0.1"
+   ],
+   "answer": 0,
+   "explain": "4 intervals: 1/4."
+  },
+  {
+   "q": "f(x)=4/(1+x²). f(0.5)=?",
+   "options": [
+    "3.2",
+    "2.4",
+    "4",
+    "2.56"
+   ],
+   "answer": 0,
+   "explain": "4/1.25=3.2."
+  },
+  {
+   "q": "Disc method: volume about the x-axis is?",
+   "options": [
+    "π∫y² dx",
+    "2π∫xy dx",
+    "∫y dx",
+    "π∫y dx"
+   ],
+   "answer": 0,
+   "explain": "Sum of discs πy²dx."
+  },
+  {
+   "q": "Volume of y=x from 0 to 1 about the x-axis?",
+   "options": [
+    "π/3",
+    "π/2",
+    "π",
+    "2π/3"
+   ],
+   "answer": 0,
+   "explain": "π∫x²dx."
+  },
+  {
+   "q": "Area between curves is?",
+   "options": [
+    "∫(upper − lower)dx",
+    "∫(lower − upper)dx",
+    "∫(upper + lower)dx",
+    "π∫(upper)²dx"
+   ],
+   "answer": 0,
+   "explain": "Top minus bottom."
+  },
+  {
+   "q": "Area under y=x² from 0 to 3?",
+   "options": [
+    "9",
+    "27",
+    "3",
+    "18"
+   ],
+   "answer": 0,
+   "explain": "3³/3=9."
+  },
+  {
+   "q": "y=6−x² meets y=3−2x at x=?",
+   "options": [
+    "−1 and 3",
+    "1 and −3",
+    "0 and 2",
+    "−2 and 3"
+   ],
+   "answer": 0,
+   "explain": "x²−2x−3=0."
+  },
+  {
+   "q": "Expand (x²+1)².",
+   "options": [
+    "x⁴+2x²+1",
+    "x⁴+1",
+    "x⁴+x²+1",
+    "x⁴+2x+1"
+   ],
+   "answer": 0,
+   "explain": "Square the binomial."
+  },
+  {
+   "q": "∫₋₁¹ x³ dx = ?",
+   "options": [
+    "0",
+    "1/2",
+    "2",
+    "−1/2"
+   ],
+   "answer": 0,
+   "explain": "Odd function over symmetric limits."
+  },
+  {
+   "q": "Trapezoidal 3.1312 vs exact π: error ≈ ?",
+   "options": [
+    "0.0104",
+    "0.1",
+    "0.001",
+    "0.5"
+   ],
+   "answer": 0,
+   "explain": "3.14159−3.1312."
+  },
+  {
+   "q": "∫₀^π sin x dx = ?",
+   "options": [
+    "2",
+    "0",
+    "1",
+    "π"
+   ],
+   "answer": 0,
+   "explain": "[−cos x] from 0 to π."
+  }
+ ],
+ "flashcards": [
+  {
+   "q": "1a Initial velocity",
+   "a": "V(0)=15 m/s"
+  },
+  {
+   "q": "1b Position function x(t)",
+   "a": "x=3t²+15t+3 (integrate, then x(2)=45 gives c=3)"
+  },
+  {
+   "q": "1c Displacement after 4 s",
+   "a": "x(4)=111 m"
+  },
+  {
+   "q": "1d Distance between t=2 and t=4",
+   "a": "V>0 throughout, so 111−45=66 m"
+  },
+  {
+   "q": "2 Volume of f=x²+1, x=−1 to 1, about x-axis",
+   "a": "π∫(x²+1)²dx=π(2/5+4/3+2)=56π/15≈11.73"
+  },
+  {
+   "q": "3 Area enclosed by the curves (check the equations on your paper; handwriting unclear)",
+   "a": "If y=6−x² and y=3−2x: meet at x=−1 and 3; ∫(3+2x−x²)dx=32/3≈10.67"
+  },
+  {
+   "q": "4a Exact ∫₀¹ 4/(1+x²)dx",
+   "a": "4·tan⁻¹(x) from 0 to 1 = π"
+  },
+  {
+   "q": "4b Trapezoidal and Simpson, five ordinates, compare",
+   "a": "h=0.25; y=4, 3.7647, 3.2, 2.56, 2. Trap≈3.1312, Simpson≈3.1416. Simpson is closer to π=3.14159."
+  }
+ ]
+}
